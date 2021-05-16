@@ -10,19 +10,23 @@ public class EnemyManager : MonoBehaviour
 
     void Start ()
     {
+        //Mengeksekusi fungsi Spawn setiap beberapa detik sesui dengan nilai spawnTime
         InvokeRepeating("Spawn", spawnTime, spawnTime);
     }
 
 
     void Spawn ()
     {
+        //Jika player telah mati maka tidak membuat enemy baru
         if (playerHealth.currentHealth <= 0f)
         {
             return;
         }
 
-        int spawnPointIndex = Random.Range (0, spawnPoints.Length);
-        Instantiate(enemy, spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
+        //Mendapatkan nilai random
+        int spawnPointIndex = Random.Range(0, spawnPoints.Length);
 
+        //Memduplikasi enemy
+        Instantiate(enemy, spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
     }
 }
