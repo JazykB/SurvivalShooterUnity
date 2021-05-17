@@ -1,21 +1,19 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameOverManager : MonoBehaviour
 {
-    public PlayerHealth playerHealth;       
-    public float restartDelay = 5f;            
+    public PlayerHealth playerHealth;
+    public float restartDelay = 5f;
 
-
-    Animator anim;                          
-    float restartTimer;                    
-
+    Animator anim;
+    float restartTimer;
 
     void Awake()
     {
         anim = GetComponent<Animator>();
     }
-
 
     void Update()
     {
