@@ -31,7 +31,6 @@ public class PlayerHealth : MonoBehaviour
         currentHealth = startingHealth;
     }
 
-
     void Update()
     {
         //Jika terkena damaage
@@ -72,6 +71,18 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
+    public void SetHealthAdjustment(int adjustmentAmount)
+    {
+        currentHealth += adjustmentAmount;
+
+        if (currentHealth > 100)
+        {
+            currentHealth = 100;
+        }
+
+        //Merubah tampilan dari health slider
+        healthSlider.value = currentHealth;
+    }
 
     void Death()
     {
